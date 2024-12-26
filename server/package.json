@@ -1,0 +1,18 @@
+{
+"scripts": {
+  "dev": "nodemon server.js",
+  "start": "node server.js",
+  "build": "node build.js"
+},
+
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}
