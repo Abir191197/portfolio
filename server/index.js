@@ -13,9 +13,7 @@ console.log("MongoDB Password:", process.env.DB_PASS);
 console.log("App running on port:", port);
 const corsOptions = {
     origin: '*',               // Allow all origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'],  // Allow these headers
-    credentials: true,          // Allow credentials (cookies, Authorization headers, etc.)
+   
 };
 
 app.use(cors(corsOptions));
