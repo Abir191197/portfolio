@@ -11,9 +11,14 @@ const port = process.env.PORT || 7000;
 console.log("MongoDB User:", process.env.DB_USER);
 console.log("MongoDB Password:", process.env.DB_PASS);
 console.log("App running on port:", port);
+const corsOptions = {
+    origin: ['https://abiralam.vercel.app'], // Allow requests from this origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+};
 
-// Middleware
-app.use(cors());
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // MongoDB Connection URL
