@@ -1,8 +1,8 @@
 {
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-    "build": "node server.js"
+    "start": "node index.js",
+    "build": "node index.js"
   },
   "devDependencies": {
     "cors": "^2.8.5",
