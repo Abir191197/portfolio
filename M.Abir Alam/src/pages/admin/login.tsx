@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +19,6 @@ const AdminLogin = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
-        credentials: 'include',
       }
     );
 
