@@ -13,7 +13,7 @@ export const fetchBlogs = async () => {
 
 export const fetchSingleBlog = async (id: string) => {
   const response = await fetch(
-    `hhttps://portfolio-dnjj.vercel.app/blogs/${id}`
+    `https://portfolio-dnjj.vercel.app/blogs/${id}`
   ); // Your backend API URL
   try {
     if (!response.ok) {

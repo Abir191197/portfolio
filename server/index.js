@@ -43,7 +43,8 @@ async function connectToCollection(collectionName) {
 
 // Auth Middleware
 const authMiddleware = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1]; // Get token from 'Authorization' header
+    const authHeader = req.headers['Authorization'] || req.headers['authorization'];
+    const token = authHeader?.split(' ')[1];
 
     if (!token) {
         return res.status(403).json({ error: 'No token provided' });
