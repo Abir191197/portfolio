@@ -12,13 +12,14 @@ console.log("MongoDB User:", process.env.DB_USER);
 console.log("MongoDB Password:", process.env.DB_PASS);
 console.log("App running on port:", port);
 const corsOptions = {
-    origin: ['https://abiralam.vercel.app', 'http://localhost:3000'], // Allow your frontend domain and localhost
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization',"email","password"],     // Allowed headers
-    credentials: true,                                     // Allow credentials (cookies, authorization headers)
-    optionsSuccessStatus: 200                             // Some legacy browsers (IE11) choke on 204
+    origin: ['https://abiralam.vercel.app', 'http://localhost:3000/auth/login',"https://abiralam.vercel.app/auth/login"],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'email', 'password'],
+    credentials: true,
+    optionsSuccessStatus: 200
 };
 
+// Apply CORS before other middleware
 app.use(cors(corsOptions));
 
 app.use(express.json());
