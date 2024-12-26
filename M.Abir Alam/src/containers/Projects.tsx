@@ -32,7 +32,7 @@ const Projects = () => {
   useEffect(() => {
     // Axios GET request to fetch all projects
     axios
-      .get('http://localhost:7000/projects', {
+      .get('https://portfolio-dnjj.vercel.app/projects', {
         headers: {
           email: 'ardhrubo908@gmail.com',
           password: 'abir908',

@@ -1,6 +1,6 @@
 export const fetchBlogs = async () => {
   try {
-    const response = await fetch('http://localhost:7000/blogs');
+    const response = await fetch('https://portfolio-dnjj.vercel.app/blogs');
     if (!response.ok) throw new Error('Failed to fetch blogs');
     const data = await response.json();
     return data;
@@ -12,7 +12,9 @@ export const fetchBlogs = async () => {
 
 
 export const fetchSingleBlog = async (id: string) => {
-  const response = await fetch(`http://localhost:7000/blogs/${id}`); // Your backend API URL
+  const response = await fetch(
+    `hhttps://portfolio-dnjj.vercel.app/blogs/${id}`
+  ); // Your backend API URL
   try {
     if (!response.ok) {
       throw new Error('Failed to fetch blog');

@@ -35,11 +35,14 @@ const ProjectManager: React.FC<ProjectManagerProps> = ({ token }) => {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const response = await fetch('http://localhost:7000/projects', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        'https://portfolio-dnjj.vercel.app/projects',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (!response.ok) throw new Error('Failed to fetch projects');
       const data = await response.json();
       setProjects(data);
@@ -76,8 +79,8 @@ const ProjectManager: React.FC<ProjectManagerProps> = ({ token }) => {
 
     try {
       const url = isEditing
-        ? `http://localhost:7000/projects/${editingId}`
-        : 'http://localhost:7000/projects';
+        ? `https://portfolio-dnjj.vercel.app/projects/${editingId}`
+        : 'https://portfolio-dnjj.vercel.app/projects';
 
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -110,12 +113,15 @@ const ProjectManager: React.FC<ProjectManagerProps> = ({ token }) => {
       return;
 
     try {
-      const response = await fetch(`http://localhost:7000/projects/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://portfolio-dnjj.vercel.app/projects/${id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) throw new Error('Failed to delete project');
 

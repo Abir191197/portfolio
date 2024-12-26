@@ -39,7 +39,7 @@ const BlogManager: React.FC<BlogManagerProps> = ({ token }) => {
   // Fetch blogs
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:7000/blogs', {
+      const response = await fetch('https://portfolio-dnjj.vercel.app/blogs', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch blogs');
@@ -71,8 +71,8 @@ const BlogManager: React.FC<BlogManagerProps> = ({ token }) => {
 
     try {
       const url = isEditing
-        ? `http://localhost:7000/blogs/${editingId}`
-        : 'http://localhost:7000/blogs';
+        ? `https://portfolio-dnjj.vercel.app/blogs/${editingId}`
+        : 'https://portfolio-dnjj.vercel.app/blogs';
       const method = isEditing ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -117,10 +117,13 @@ const BlogManager: React.FC<BlogManagerProps> = ({ token }) => {
     if (!window.confirm('Are you sure you want to delete this blog?')) return;
 
     try {
-      const response = await fetch(`http://localhost:7000/blogs/${id}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        `https://portfolio-dnjj.vercel.app/blogs/${id}`,
+        {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (!response.ok) throw new Error('Failed to delete blog');
       toast.success('Blog deleted successfully');
       fetchBlogs();

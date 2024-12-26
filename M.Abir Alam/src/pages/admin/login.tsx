@@ -11,13 +11,16 @@ console.log(email,password);
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:7000/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      'https://portfolio-dnjj.vercel.app/auth/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
 
     const data = await response.json();
 

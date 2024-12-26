@@ -38,10 +38,10 @@ const AdminDashboard: React.FC = () => {
   const fetchStats = async () => {
     try {
       const [blogsRes, projectsRes] = await Promise.all([
-        fetch('http://localhost:7000/blogs', {
+        fetch('https://portfolio-dnjj.vercel.app/blogs', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch('http://localhost:7000/projects', {
+        fetch('https://portfolio-dnjj.vercel.app/projects', {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
