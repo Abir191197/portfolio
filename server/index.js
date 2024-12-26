@@ -12,9 +12,10 @@ console.log("MongoDB User:", process.env.DB_USER);
 console.log("MongoDB Password:", process.env.DB_PASS);
 console.log("App running on port:", port);
 const corsOptions = {
-    origin: ['https://abiralam.vercel.app/auth/login', 'http://localhost:3000/auth/login','https://abiralam.vercel.app'], // Allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+    origin: '*',               // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Allow these headers
+    credentials: true,          // Allow credentials (cookies, Authorization headers, etc.)
 };
 
 app.use(cors(corsOptions));
