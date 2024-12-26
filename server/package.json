@@ -1,10 +1,9 @@
 {
-"scripts": {
-  "dev": "nodemon server.js",
-  "start": "node server.js",
-  "build": "node build.js"
-},
-
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "node server.js"
+  },
   "devDependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
