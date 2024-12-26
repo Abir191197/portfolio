@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -7,7 +7,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
-console.log(email,password);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
