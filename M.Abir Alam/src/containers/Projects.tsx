@@ -86,13 +86,12 @@ const Projects = () => {
         {sortByYear(visibleProjects).map((project, i) => {
           return (
             <ProjectCard
-              {...project}
-              key={project.id}
-              variants={projectVariants}
-              initial="hidden"
-              whileInView="show"
-              custom={i}
-            />
+            description={undefined} {...project}
+            key={project.id}
+            variants={projectVariants}
+            initial="hidden"
+            whileInView="show"
+            custom={i}            />
           );
         })}
       </div>

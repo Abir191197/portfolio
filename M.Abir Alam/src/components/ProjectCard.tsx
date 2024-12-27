@@ -1,82 +1,98 @@
-import { Icon } from '@iconify/react';
-import { motion, MotionProps } from 'framer-motion';
+import React from 'react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { ProjectType } from '../types';
-import { blurImageURL } from '../utils/config';
+import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
 
 const ProjectCard = ({
   name,
+  description,
   url,
   repo,
   year,
   img,
-  tags,
-  ...rest
-}: ProjectType & MotionProps) => {
-  // To avoid hydration failed error
-  const [domLoaded, setDomLoaded] = useState(false);
+  tags = [],
+  ...motionProps
+}) => {
+  const handleProjectClick = (e) => {
+    const isLink = e.target.closest('a');
+    if (!isLink && url) {
+      window.open(url, '_blank', 'noopener noreferrer');
+    }
+  };
 
-  useEffect(() => {
-    setDomLoaded(true);
-  }, []);
-
-  return domLoaded ? (
-    <motion.div {...rest} className="w-full max-w-[350px]">
-      <button
-        onClick={(e) => {
-          // Don't run this if the clicked target is an anchor element
-          if ((e.target as HTMLElement).closest('a')) return;
-          window.open(url, '_blank');
-        }}
-        className="group bg-bg-secondary block w-full shadow-xl dark:shadow-2xl rounded-md overflow-hidden transition-all duration-200"
+  return (
+    <motion.div className="w-full max-w-sm" {...motionProps}>
+      <div
+        className="group overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer h-full flex flex-col"
+        onClick={handleProjectClick}
       >
-        <div className="overflow-hidden h-[200px]">
+        <div className="relative aspect-video overflow-hidden">
           <Image
-            src={img} // Use fallback image if img is missing or broken
-            alt={name}
-            width={300}
-            height={300}
-            placeholder="blur"
-            blurDataURL={blurImageURL}
-            className="w-full h-full object-cover"
-            // Optional: Add error handling for broken images
-            onError={(e) =>
-              ((e.target as HTMLImageElement).src = '/fallback-image.jpg')
-            }
+            src={img || '/api/placeholder/400/225'}
+            alt={`${name} project thumbnail`}
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={false}
           />
         </div>
-        <div className="p-4 py-3 space-y-1">
-          <div className="flex justify-between items-center">
-            <p className="text-xs capitalize font-mono">{tags.join(' | ')}</p>
-            <div className="flex items-center space-x-1.5">
-              <a
-                href={repo}
-                className="block hover:text-accent duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="tabler:brand-github" width={20} height={20} />
-              </a>
-              <a
-                href={url}
-                className="block hover:text-accent duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="ci:external-link" width={22} height={22} />
-              </a>
+
+        <div className="p-4">
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="font-semibold text-lg group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              {name}
+            </h3>
+            <div className="flex items-center gap-2">
+              {repo && (
+                <a
+                  href={repo}
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View source code"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              )}
+              {url && (
+                <a
+                  href={url}
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit live project"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+              )}
             </div>
           </div>
-          <h4 className="flex justify-between group-hover:text-accent capitalize font-medium duration-200">
-            <span>{name}</span>
-            <span className="mr-1">{year}</span>
-          </h4>
+
+          {description && (
+            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+              {description}
+            </p>
+          )}
+
+          <div className="flex flex-wrap gap-2 mt-4">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
-      </button>
+
+        <div className="mt-auto p-4 pt-0">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {year}
+          </span>
+        </div>
+      </div>
     </motion.div>
-  ) : (
-    <></>
   );
 };
 
