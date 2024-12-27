@@ -8,7 +8,10 @@ const nextConfig = {
       'images.unsplash.com',
       'res.cloudinary.com',
       'aws.amazon.com',
+      'github.com',
+      'githubusercontent.com'
     ],
+    
   },
   experimental: {
     appDir: false,
