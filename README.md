@@ -1,9 +1,9 @@
 <h1 align="center">
- 
+ https://abiralam.vercel.app
 </h1>
 
 <p align="center">
-  A portfolio website i.e. <a href="" target="_blank"></a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+  A portfolio website i.e. https://abiralam.vercel.app <a href="https://abiralam.vercel.app" target="_blank"></a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Version-1.3.1-blue"/ >
 </p>
 
-![Abir-nextjs-portfolio]()
+![Abir Portfolio](https://abiralam.vercel.app)
 
 ## Sections
 
@@ -23,6 +23,7 @@
 - Education
 - Projects
 - Blog
+- Contact
 
 
 ## Built With
@@ -92,14 +93,3 @@ Give a ⭐️ if you liked this project!
 
 
 
-Portfolio Live site Link   : https://abiralam.vercel.app/
-
-Portfolio Github Repo Link :
-Frontend : https://github.com/Abir191197/portfolio/tree/main/M.Abir%20Alam 
-Backend  : https://github.com/Abir191197/portfolio/tree/main/server
-
-Portfolio Dashboard Live Link : https://abiralam.vercel.app/admin/login
-
-Admin Credential :
-  Email: ardhrubo908@gmail.com  
-  Password : abir908
