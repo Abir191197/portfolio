@@ -24,7 +24,7 @@ export const socialLinks: StringKeyValueType = {
   instagram: 'https://www.instagram.com/abir_ar_rafi_dhrubo/',
   twitter: 'https://twitter.com',
   github: 'https://github.com/abir191197',
-  linkedin: 'https://www.linkedin.com/in/abir191197/',
+  linkedin: 'https://www.linkedin.com/in/abir197',
 };
 
 export const author = {
