@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST={"..\\components\\ShowLottie.tsx -> @lottiefiles/react-lottie-player":{id:9879,files:["static/chunks/2fbf9dd2.fdae08a55d2c7f53.js"]},"admin\\BlogManager.tsx -> react-quill":{id:1167,files:["static/chunks/a1ffd009.5028b1f253ceff53.js","static/chunks/764-107148796b175474.js","static/chunks/167.768084c6a8ac8974.js"]}};

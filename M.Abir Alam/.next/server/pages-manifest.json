@@ -1,0 +1,13 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html",
+  "/Blog/AllBlog": "pages/Blog/AllBlog.html",
+  "/Blog/[id]": "pages/Blog/[id].html",
+  "/admin/BlogManager": "pages/admin/BlogManager.html",
+  "/admin/ProjectManager": "pages/admin/ProjectManager.html",
+  "/admin/dashboard": "pages/admin/dashboard.html",
+  "/admin/login": "pages/admin/login.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js"
+}

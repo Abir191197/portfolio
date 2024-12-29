@@ -25,7 +25,6 @@
 - Blog
 - Contact
 
-
 ## Built With
 
 - [Next.js](https://nextjs.org/)
@@ -41,10 +40,8 @@
 
 1. Fork this repository and clone the project
 
-
-
 ```bash
-  git clone 
+  git clone
 ```
 
 2. Go to the project directory
@@ -73,8 +70,6 @@
 
 - To change the theme, edit `src/styles/globals.css`
 
-
-
 ## Contact
 
 - Website - []()
@@ -89,7 +84,3 @@
 ## Show Your Support
 
 Give a ⭐️ if you liked this project!
-
-
-
-
