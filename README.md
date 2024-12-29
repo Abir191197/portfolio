@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Version-1.3.1-blue"/ >
 </p>
 
-![Abir Portfolio](https://abiralam.vercel.app)
+![Abir Portfolio](https://i.ibb.co.com/y0QtnmP/Screenshot-2024-12-27-083856.png)
 
 ## Sections
 
