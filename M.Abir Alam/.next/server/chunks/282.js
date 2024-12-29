@@ -2118,7 +2118,7 @@ const seoData = {
     title: "M.Abir Alam | Full-Stack Developer",
     description: "M.Abir Alam is a full-stack developer who specializes in building (and occasionally designing) exceptional visual interfaces.",
     author: author.name,
-    image: "https://camo.githubusercontent.com/4cbdfe031b01cd40e9557a2e191ecfd7135fc9327ec6bed411e7d6f36a8cf3f8/68747470733a2f2f692e6962622e636f2e636f6d2f793051746e6d502f53637265656e73686f742d323032342d31322d32372d3038333835362e706e67",
+    image: "https://i.ibb.co.com/sQh2Q2G/Screenshot-2024-12-29-064337.png",
     url: "https://abiralam.vercel.app/",
     keywords: [
         "M.Abir Alam",
